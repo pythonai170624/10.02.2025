@@ -2,27 +2,10 @@
 from typing import override
 
 from iatm import IAtm
+from proxy_atm.proxy_base import ProxyBase
 from real_atm import RealATM
 
-class OnlineProxyATM(IAtm):
-    def __init__(self):
-        self.atm = RealATM()  # Proxy holds a reference to the real object
-
-    @override
-    def deposit(self, amount: int):
-        raise RuntimeError("cannot do this operation online")
-
-    @override
-    def withdraw(self, amount: int) -> bool:
-        raise RuntimeError("cannot do this operation online")
-
-    @override
-    def insert_card(self):
-        raise RuntimeError("cannot do this operation online")
-
-    @override
-    def eject_card(self):
-        raise RuntimeError("cannot do this operation online")
+class OnlineProxyATM(ProxyBase):
 
     @override
     def get_total_cash(self) -> int:

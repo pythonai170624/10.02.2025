@@ -1,6 +1,10 @@
 
 from abc import ABC, abstractmethod
 
+
+# ABC -- not real cannot create instance
+# atm = IAtm() # Should be Error
+
 class IAtm(ABC):
 
     @abstractmethod

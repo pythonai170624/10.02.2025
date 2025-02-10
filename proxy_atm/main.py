@@ -23,3 +23,7 @@ if __name__ == "__main__":
     print(proxy.get_total_cash())
     print(proxy.is_working())
 
+
+
+# create Brinx proxy
+# they can only withdraw money, other operations will get RuntimeError
