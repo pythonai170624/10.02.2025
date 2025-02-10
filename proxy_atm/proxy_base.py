@@ -1,10 +1,12 @@
 # proxy_atm/proxy_atm.py
+from abc import ABC
 from typing import override
 
 from iatm import IAtm
 from real_atm import RealATM
 
-class ProxyBase(IAtm):
+class ProxyBase(IAtm, ABC):
+
     def __init__(self):
         self.atm = RealATM()  # Proxy holds a reference to the real object
 
